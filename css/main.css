@@ -1,0 +1,12 @@
+#main {
+	margin-top: 60px;
+}
+.navbar-brand {
+	color: #fff !important;
+}
+.navbar-inverse {
+	background-color: #0074d9; /* Darker blue than the default */
+}
+#navbar-main {
+	border-color: #0061b5;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dragonoids-Website",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Website of the GFA Dragonoids (FTC Team 4286)",
+  "author": "Ryan Petschek <petschekr@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/petschekr/Dragonoids-Website"
+  },
+  "bugs": {
+    "url": "https://github.com/petschekr/Dragonoids-Website/issues"
+  },
+  "dependencies": {
+    "async": "*",
+    "body-parser": "*",
+    "compression": "*",
+    "express": "4.2.x",
+    "jade": "^1.7.0",
+    "mongodb": "*",
+    "response-time": "*",
+    "serve-static": "*"
+  },
+  "license": "MIT"
+}
