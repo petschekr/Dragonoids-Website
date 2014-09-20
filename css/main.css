@@ -18,6 +18,14 @@ footer p a {
 	color: #fff;
 	border-bottom: 1px dotted white;
 }
+.member img {
+    float: left;
+    height: 75px;
+    width: 75px;
+    margin-top: 7px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
 
 * {
     -webkit-box-sizing: border-box;
@@ -232,12 +240,17 @@ a.pure-button-primary {
 }
 
 /* This is the class used for the content sub-headers (<h3>) */
-.content-subhead {
+h3.content-subhead {
     color: #1f8dd6;
 }
-    .content-subhead i {
-        margin-right: 7px;
-    }
+h3.content-subhead i {
+    margin-right: 7px;
+}
+h4.content-subhead {
+    font-weight: 700;
+    margin: -0.5em 0;
+    text-transform: capitalize;
+}
 
 /* This is the class used for the dark-background areas. */
 .ribbon {

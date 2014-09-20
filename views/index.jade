@@ -7,33 +7,19 @@ block prewrapper
 			p.splash-subhead
 				a(href="http://www.usfirst.org/roboticsprograms/ftc/", target="_blank") FTC
 				| &nbsp;Team 4286 from Greens Farms, Connecticut
-			p: a.pure-button.pure-button-primary(href="http://purecss.io") Get Started
+			p: a.pure-button.pure-button-primary(href="/blog") View Our Blog
 
 block content
 	.content
-		h2.content-head.is-center Excepteur sint occaecat cupidatat.
+		h2.content-head.is-center Meet our team
 
 		.pure-g
-			.l-box.pure-u-1.pure-u-md-1-2.pure-u-lg-1-4
-				h3.content-subhead
-					i.fa.fa-rocket
-					| Get Started Quickly
-				p Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-			.l-box.pure-u-1.pure-u-md-1-2.pure-u-lg-1-4
-				h3.content-subhead
-					i.fa.fa-rocket
-					| Get Started Quickly
-				p Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-			.l-box.pure-u-1.pure-u-md-1-2.pure-u-lg-1-4
-				h3.content-subhead
-					i.fa.fa-rocket
-					| Get Started Quickly
-				p Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-			.l-box.pure-u-1.pure-u-md-1-2.pure-u-lg-1-4
-				h3.content-subhead
-					i.fa.fa-rocket
-					| Get Started Quickly
-				p Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+			each member in members
+				.l-box.pure-u-1.pure-u-md-1-2.pure-u-lg-1-4.member
+					img(src=member.img, alt=member.name)
+					h3.content-subhead= member.name
+					h4.content-subhead= member.positions.join(", ")
+					p= member.bio
 
 	.ribbon.l-box-lrg.pure-g
 		.l-box-lrg.is-center.pure-u-1.pure-u-md-1-2.pure-u-lg-2-5

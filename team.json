@@ -1,0 +1,28 @@
+{
+	"members": [
+		{
+			"name": "Ryan Petschek",
+			"img": "http://placehold.it/75x75",
+			"positions": ["Captain", "Lead Programmer"],
+			"bio": "Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum. Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum."
+		},
+		{
+			"name": "Anders Bottger",
+			"img": "http://placehold.it/75x75",
+			"positions": ["Captain"],
+			"bio": "Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum. Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum."
+		},
+		{
+			"name": "Nina Rodgers",
+			"img": "http://placehold.it/75x75",
+			"positions": ["Captain"],
+			"bio": "Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum. Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum."
+		},
+		{
+			"name": "Charley Beeman",
+			"img": "http://placehold.it/75x75",
+			"positions": ["Building", "Community Outreach", "Something Else"],
+			"bio": "Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum. Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum."
+		}
+	]
+}

@@ -1,5 +1,6 @@
 /// <reference path="typescript_defs/node.d.ts" />
 var crypto = require("crypto");
+var fs = require("fs");
 
 var express = require("express");
 var app = express();
@@ -23,14 +24,36 @@ function createNonce (bytes: number = 32): string {
 	return crypto.randomBytes(bytes).toString("hex");
 }
 
+interface TeamMember {
+	name: string;
+	img: string;
+	positions: string[];
+	bio: string;
+}
+
 app.route("/").get(function(request, response) {
-	response.render("index", function(err: Error, html: string): void {
+	// Read the team file
+	fs.readFile("team.json", {charset: "utf8"}, function(err: Error, team: string): void {
 		if (err) {
 			console.error(err);
-			response.send(500, "A Jade error occurred!");
+			response.send(500, "Error reading team.json!");
 			return;
 		}
-		response.send(html);
+		try {
+			var members: TeamMember[] = JSON.parse(team).members;
+		} catch (e) {
+			console.error(e);
+			response.send(500, "Invalid team.json file!");
+			return;
+		}
+		response.render("index", {members: members}, function(err: Error, html: string): void {
+			if (err) {
+				console.error(err);
+				response.send(500, "A Jade error occurred!");
+				return;
+			}
+			response.send(html);
+		});
 	});
 });
 
