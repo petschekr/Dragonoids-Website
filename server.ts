@@ -17,6 +17,7 @@ app.locals.pretty = true;
 
 app.use("/css", serveStatic("css"));
 app.use("/js", serveStatic("js"));
+app.use("/img", serveStatic("img"));
 
 function createNonce (bytes: number = 32): string {
 	return crypto.randomBytes(bytes).toString("hex");
@@ -26,6 +27,7 @@ app.route("/").get(function(request, response) {
 	response.render("index", function(err: Error, html: string): void {
 		if (err) {
 			console.error(err);
+			response.send(500, "A Jade error occurred!");
 			return;
 		}
 		response.send(html);

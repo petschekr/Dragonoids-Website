@@ -5,7 +5,7 @@ html
 		if title
 			title= title + " - Dragonoids"
 		else
-			title Dragonoids Team 4286
+			title GFA Dragonoids
 		
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		meta(http-equiv="X-UA-Compatible", content="IE=edge")
@@ -13,30 +13,33 @@ html
 		meta(name="keywords", content="Dragonoids, Greens Farms Academy, robotics, 4286, Greens Farms, GFA")
 		meta(name="author", content="Ryan Petschek")
 		
-		// Bootstrap + Paper theme from Bootswatch
-		link(rel="stylesheet", href="/css/bootstrap.min.css")
-		script(src="//code.jquery.com/jquery-2.1.1.min.js")
-		script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
+		// Pure
+		link(rel="stylesheet", href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css")
+		// ^ Not offered over https connections
+		link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css")
+		// IE Nonsense
+		<!--[if lte IE 8]>
+		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+		<![endif]-->
+		<!--[if gt IE 8]><!-->
+		link(rel="stylesheet", href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css")
+		<!--<![endif]-->
 
 		block resources
 			link(rel="stylesheet", href="/css/main.css")
 	body
 		block header
-			.navbar.navbar-default.navbar-fixed-top.navbar-inverse
-				.container
-					.navbar-header
-						a.navbar-brand(href="/") GFA Dragonoids Team 4286
-						button.navbar-toggle(type="button", data-toggle="collapse", data-target="#navbar-main")
-							span.icon-bar
-							span.icon-bar
-					#navbar-main.navbar-collapse.collapse
-						ul.nav.navbar-nav
-							li
-								a(href="#") A link
-							li
-								a(href="#") Help
-		block content
-		block footer
+			header.header
+				.home-menu.pure-menu.pure-menu-open.pure-menu-horizontal.pure-menu-fixed
+					a.pure-menu-heading(href="/") GFA Dragonoids
+					ul
+						li.pure-menu-selected: a(href="/") Home
+						li: a(href="/blog") Blog
+		block prewrapper
+		.content-wrapper#main
+			block content
+			footer.footer.l-box.is-center
+				block footer
 
 		//- Compiled on stuff
 		!="<!-- Compiled on " + new Date().toString() + " -->"
