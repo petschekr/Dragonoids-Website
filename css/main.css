@@ -4,6 +4,8 @@ footer img {
 	/*width: 10%;*/
 	height: 160px;
 	border-radius: 3px;
+	padding: 7px;
+	background-color: white;
 }
 footer p:not(:first-child) {
     margin-top: -10px;
@@ -21,6 +23,7 @@ footer p a {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    font-family: "Montserrat";
 }
 
 /*
@@ -31,7 +34,6 @@ body {
     line-height: 1.7em;
     color: #7f8c8d;
     font-size: 13px;
-    font-family: "Montserrat";
 }
 
 h1, h2, h3, h4, h5, h6, label {
