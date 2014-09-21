@@ -2,6 +2,8 @@
 /// <reference path="typescript_defs/mongodb.d.ts" />
 var crypto = require("crypto");
 var fs = require("fs");
+var async = require("async");
+var moment = require("moment");
 
 interface TeamMember {
 	name: string;
@@ -20,9 +22,11 @@ if (err)
 var Collections: {
 	Users: mongodb.Collection;
 	BlogPosts: mongodb.Collection;
+	Tags: mongodb.Collection;
 } = {
 	Users: db.collection("users"),
-	BlogPosts: db.collection("blog")
+	BlogPosts: db.collection("blog"),
+	Tags: db.collection("tags")
 };
 console.info("Connected to MongoDB server");
 
@@ -103,13 +107,67 @@ app.route("/").get(function(request, response) {
 	});
 });
 app.route("/blog").get(function(request, response) {
-	response.render("blog", function(err: Error, html: string): void {
+	// Get blog posts
+	var pinnedPostsCursor = Collections.BlogPosts.find({"pinned": true}).sort("date");
+	var regularPostsCursor = Collections.BlogPosts.find({"pinned": false}).sort("date");
+	pinnedPostsCursor.toArray(function(err, pinnedPosts) {
+		regularPostsCursor.toArray(function(err2, regularPosts) {
+			if (err || err2) {
+				console.log(err, err2);
+				response.send("A MongoDB error occurred");
+				return;
+			}
+			response.locals.pinnedPosts = pinnedPosts;
+			response.locals.posts = regularPosts;
+			response.render("blog", function(err: Error, html: string): void {
+				if (err) {
+					console.error(err);
+					response.send(500, "A Jade error occurred!");
+					return;
+				}
+				response.send(html);
+			});
+		});
+	});
+}).post(bodyParser, function(request, response) {
+	if (!response.locals.loggedIn) {
+		response.send(401, "Unauthorized. Please log in at /login");
+		return;
+	}
+	var title: string = request.body.title.trim();
+	var tags: string[] = request.body.tags.trim().split(", ");
+	if (tags.length === 1 && tags[0] === "")
+		tags = [];
+	var images: string[] = request.body.images.trim().split(", ");
+	if (images.length === 1 && images[0] === "")
+		images = [];
+	var youtubes: string[] = request.body.youtube.trim().split(", ");
+	if (youtubes.length === 1 && youtubes[0] === "")
+		youtubes = [];
+	var privatePost: boolean = (request.body.private === "on");
+	var pinnedPost: boolean = (request.body.pinned === "on");
+	var content: string = request.body.content;
+	Collections.BlogPosts.insert({
+		"title": title,
+		"author": {
+			"username": response.locals.user.username,
+			"name": response.locals.user.name
+		},
+		"tags": tags,
+		"images": images,
+		"youtubes": youtubes,
+		"private": privatePost,
+		"pinned": pinnedPost,
+		"content": content,
+		"date": new Date(),
+		"datestring": new Date().toString()
+	}, {w:1}, function(err) {
 		if (err) {
 			console.error(err);
-			response.send(500, "A Jade error occurred!");
+			response.send("A MongoDB error occurred!");
 			return;
 		}
-		response.send(html);
+		response.redirect("/blog");
 	});
 });
 

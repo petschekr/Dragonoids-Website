@@ -6,7 +6,55 @@
     left: 10px;
     color: rgb(176, 202, 219);
     font-size: 0.8em;
+    text-align: left;
 }
+#user button {
+    font-size: 80%;
+    margin-top: 8px;
+}
+#user b {
+    cursor: pointer;
+    text-decoration: underline;
+}
+fieldset.pure-group input:only-child {
+    top: 0 !important;
+    border-radius: 4px !important;
+}
+form input, form textarea, form button[type="submit"], form label {
+    margin: 0 auto !important;
+}
+form h2 {
+    margin: 0;
+}
+form {
+    text-align: center;
+    font-family: "Montserrat";
+    display: none;
+}
+.date {
+    font-weight: bold;
+}
+.private {
+    color: #FF4136;
+    font-family: "Montserrat";
+}
+.posts > h3 {
+    font-family: "Montserrat";
+    opacity: 0.75;
+}
+.button-danger {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(202, 60, 60);
+    font-size: 35%;
+    position: relative;
+    top: -7px;
+}
+footer {
+    font-family: "Montserrat";
+}
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -100,12 +148,19 @@ h3 {
 }
 
 .post {
-    padding-bottom: 2em;
+    padding-bottom: 1em;
 }
 .post-title {
     font-size: 2em;
     color: #222;
     margin-bottom: 0.2em;
+}
+.post-title::before {
+    content: "–";
+    margin-left: -20px;
+    position: relative;
+    left: -10px;
+    opacity: 0.2;
 }
 .post-avatar {
     border-radius: 50px;
@@ -129,6 +184,7 @@ h3 {
     color: #fff;
     background: #999;
     font-size: 80%;
+    display: inline-block;
 }
     .post-category-design {
         background: #5aba59;
@@ -156,9 +212,6 @@ h3 {
 footer {
     text-align: center;
     padding: 1em 0;
-}
-footer a {
-    color: #ccc;
     font-size: 80%;
 }
 footer .pure-menu a:hover,
@@ -166,8 +219,10 @@ footer .pure-menu a:focus {
     background: none;
 }
 
-@media (min-width: 48em) and (max-width: 1440px) {
-
+@media (max-width: 932px) {
+    .post-title::before {
+        display: none;
+    }
 }
 
 @media (min-width: 48em) {

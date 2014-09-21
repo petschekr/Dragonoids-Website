@@ -1,11 +1,33 @@
 extends template-blog
 
+block append resources
+	script.
+		var displayNewPost = false;
+		window.onload = function() {
+			document.querySelector("#user button").onclick = function() {
+				if (!displayNewPost) {
+					document.getElementById("newpost").style.display = "block";
+					displayNewPost = !displayNewPost;
+				}
+				else {
+					document.getElementById("newpost").style.display = "none";
+					displayNewPost = !displayNewPost;
+				}
+			};
+			document.querySelector("#user b").onclick = function() {
+			};
+		};
+
 block content
 	#layout.pure-g
 	.sidebar.pure-u-1.pure-u-md-1-4
 		header.header
 			if loggedIn
 				span#user Logged in as <b>#{user.username}</b>
+					br
+					button.pure-button.button-xsmall(title="Add Post")
+						i.fa.fa-plus
+						| &nbsp; New Post
 			h1.brand-title Dragonoids Robotics
 			h2.brand-tagline Blog of FTC Team 4286
 			nav.nav
@@ -18,75 +40,71 @@ block content
 						else
 							a.pure-button(href="/login") Team Login
 	.content.pure-u-1.pure-u-md-3-4
+		form.pure-form#newpost(method="post")
+			h2 New Post
+			fieldset.pure-group
+				input.pure-input-2-3(type="text", placeholder="Title", required=true, name="title")
+			fieldset.pure-group
+				input.pure-input-2-3(type="text", placeholder="Tags (separated with commas)", name="tags")
+			fieldset.pure-group
+				input.pure-input-2-3(type="text", placeholder="Images (URLs separated with commas)", name="images")
+				input.pure-input-2-3(type="text", placeholder="YouTube Videos (URLs separated with commas)", name="youtube")
+			label.pure-input-1-4.pure-checkbox(for="private")
+				input#private(type="checkbox", name="private")
+				| &nbsp;Only visable to group members?
+			label.pure-input-1-4.pure-checkbox(for="pinned")
+				input#pinned(type="checkbox", name="pinned")
+				| &nbsp;Pinned post?
+			fieldset.pure-group
+				textarea.pure-input-2-3(placeholder="Content", rows="6", required=true, name="content")
+			button.pure-button.pure-button-primary.pure-input-1-3(type='submit') Post
+
+		// A wrapper for all the blog posts
 		div
-			// A wrapper for all the blog posts
+			mixin post(post)
+				if (post.private && loggedIn) || !post.private
+					section.post
+						header.post-header
+							h2.post-title= post.title
+								//
+									if user && (post.author.username === user.username)
+										//- This is the user's post
+										button.pure-button.button-danger
+											i.fa.fa-exclamation-triangle
+											| &nbsp;Delete
+							p.post-meta
+								| By 
+								a.post-author(href="#", title=post.author.username)= post.author.name
+								| &nbsp;
+								if post.tags.length > 0
+									| under 
+									each tag in post.tags
+										a.post-category.post-category-design(href="#")= tag
+										| &nbsp;
+										//a.post-category.post-category-pure(href="#") Pure
+								| on 
+								span.date #{post.date.toDateString()} at #{post.date.toLocaleTimeString()}
+								if post.private
+									span.private &nbsp;(private)
+						.post-description
+							p= post.content
 			.posts
-				h1.content-subhead Pinned Post
-				// A single blog post
-				section.post
-					header.post-header
-						h2.post-title Introducing Pure
-						p.post-meta
-							| By
-							a.post-author(href="#") Tilo Mitra
-							| under
-							a.post-category.post-category-design(href="#") CSS
-							a.post-category.post-category-pure(href="#") Pure
-					.post-description
-						p
-							| Yesterday at CSSConf, we launched Pure – a new CSS library. Phew! Here are the
-							a(href="https://speakerdeck.com/tilomitra/pure-bliss") slides from the presentation
-							| . Although it looks pretty minimalist, we’ve been working on Pure for several months. After many iterations, we have released Pure as a set of small, responsive, CSS modules that you can use in every web project.
+				h1.content-subhead Pinned Posts
+				if pinnedPosts.length > 0
+					each post in pinnedPosts
+						+post(post)
+				else
+					h3: i No pinned posts yet
 			.posts
 				h1.content-subhead Recent Posts
-				section.post
-					header.post-header
-						h2.post-title Everything You Need to Know About Grunt
-						p.post-meta
-							| By
-							a.post-author(href="#") Eric Ferraiuolo
-							| under
-							a.post-category.post-category-js(href="#") JavaScript
-					.post-description
-						p
-							| Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-				section.post
-					header.post-header
-						h2.post-title Photos from CSSConf and JSConf
-						p.post-meta
-							| By
-							a.post-author(href="#") Reid Burke
-							| under
-							a.post-category(href="#") Uncategorized
-					.post-description
-						.post-images.pure-g
-							.pure-u-1.pure-u-md-1-2
-								a(href="http://www.flickr.com/photos/uberlife/8915936174/")
-									img.pure-img-responsive(alt="Photo of someone working poolside at a resort", src="http://farm8.staticflickr.com/7448/8915936174_8d54ec76c6.jpg")
-								.post-image-meta
-									h3 CSSConf Photos
-							.pure-u-1.pure-u-md-1-2
-								a(href="http://www.flickr.com/photos/uberlife/8907351301/")
-									img.pure-img-responsive(alt="Photo of the sunset on the beach", src="http://farm8.staticflickr.com/7382/8907351301_bd7460cffb.jpg")
-								.post-image-meta
-									h3 JSConf Photos
-				section.post
-					header.post-header
-						h2.post-title YUI 3.10.2 Released
-						p.post-meta
-							| By
-							a.post-author(href="#") Andrew Wooldridge
-							| under
-							a.post-category.post-category-yui(href="#") YUI
-					.post-description
-						p
-							| We are happy to announce the release of YUI 3.10.2! You can find it now on the Yahoo! CDN, download it directly, or pull it in via npm. We’ve also updated the YUI Library website with the latest documentation.
+				if posts.length > 0
+					each post in posts
+						+post(post)
+				else
+					h3: i No posts yet
 			footer
-				.pure-menu.pure-menu-horizontal.pure-menu-open
-					ul
-						li
-							a(href="http://purecss.io/") About
-						li
-							a(href="http://twitter.com/yuilibrary/") Twitter
-						li
-							a(href="http://github.com/yahoo/pure/") GitHub
+				p Copyright &copy; 2014 Dragonoids Robotics
+				p Website released under the 
+					a(href="http://opensource.org/licenses/MIT", target="_blank") MIT license
+					| &nbsp; on 
+					a(href="https://github.com/petschekr/Dragonoids-Website", target="_blank") GitHub
