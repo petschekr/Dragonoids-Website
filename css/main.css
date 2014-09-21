@@ -1,11 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 footer img {
-	/*width: 10%;*/
-	height: 160px;
 	border-radius: 3px;
 	padding: 7px;
 	background-color: white;
+    /* Responsive size */
+    width: 15%;
+    max-width: 250px;
+    min-width: 100px;
+    height: auto;
 }
 footer p:not(:first-child) {
     margin-top: -10px;
