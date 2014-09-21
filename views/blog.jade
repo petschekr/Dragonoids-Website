@@ -88,6 +88,18 @@ block content
 									span.private &nbsp;(private)
 						.post-description
 							p= post.content
+							if post.images.length > 0
+								.images
+									each imageURL in post.images
+										.pure-u-1.pure-u-md-1-2
+											img.pure-img-responsive(alt="Attached image", src=imageURL)
+							if post.youtubes.length > 0
+								.youtubes
+									- var youtubeID = "";
+									each youtubeURL in post.youtubes
+										- youtubeID = youtubeURL.match(/https?:\/\/.*?\.youtube.*\/watch\?v=(.*)/i)[1];
+										.pure-u-1
+											iframe.youtube(type="text/html", src="https://www.youtube.com/embed/#{youtubeID}?html5=1", allowfullscreen, frameborder="0")
 			.posts
 				h1.content-subhead Pinned Posts
 				if pinnedPosts.length > 0
