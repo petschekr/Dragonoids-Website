@@ -11,7 +11,10 @@ block content
 					li.nav-item
 						a.pure-button(href="/") Home
 					li.nav-item
-						a.pure-button(href="/login") Team Login
+						if loggedIn
+							a.pure-button(href="/logout") Logout
+						else
+							a.pure-button(href="/login") Team Login
 	.content.pure-u-1.pure-u-md-3-4
 		div
 			// A wrapper for all the blog posts

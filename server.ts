@@ -182,6 +182,12 @@ app.route("/login").get(function(request, response) {
 		});
 	});
 });
+// Log out
+app.route("/logout").all(function(request, response) {
+	request.session["email"] = null;
+	request.session["token"] = null;
+	response.redirect("/blog");
+});
 
 // 404 page
 app.use(function(request, response, next): void {
