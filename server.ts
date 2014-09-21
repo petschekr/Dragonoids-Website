@@ -108,8 +108,8 @@ app.route("/").get(function(request, response) {
 });
 app.route("/blog").get(function(request, response) {
 	// Get blog posts
-	var pinnedPostsCursor = Collections.BlogPosts.find({"pinned": true}).sort("date");
-	var regularPostsCursor = Collections.BlogPosts.find({"pinned": false}).sort("date");
+	var pinnedPostsCursor = Collections.BlogPosts.find({"pinned": true}).sort({"date": -1});
+	var regularPostsCursor = Collections.BlogPosts.find({"pinned": false}).sort({"date": -1});
 	pinnedPostsCursor.toArray(function(err, pinnedPosts) {
 		regularPostsCursor.toArray(function(err2, regularPosts) {
 			if (err || err2) {
