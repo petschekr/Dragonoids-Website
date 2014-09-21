@@ -56,6 +56,16 @@ app.route("/").get(function(request, response) {
 		});
 	});
 });
+app.route("/blog").get(function(request, response) {
+	response.render("blog", function(err: Error, html: string): void {
+		if (err) {
+			console.error(err);
+			response.send(500, "A Jade error occurred!");
+			return;
+		}
+		response.send(html);
+	});
+});
 
 // 404 page
 app.use(function(request, response, next): void {
