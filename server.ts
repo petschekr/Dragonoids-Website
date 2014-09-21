@@ -177,7 +177,7 @@ app.route("/login").get(function(request, response) {
 				}
 				request.session["username"] = user.username;
 				request.session["token"] = loginToken;
-				response.redirect("/");
+				response.redirect("/blog");
 			});
 		});
 	});
