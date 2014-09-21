@@ -1,5 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
+#user {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: rgb(176, 202, 219);
+    font-size: 0.8em;
+}
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -160,7 +167,7 @@ footer .pure-menu a:focus {
 }
 
 @media (min-width: 48em) and (max-width: 1440px) {
-    
+
 }
 
 @media (min-width: 48em) {

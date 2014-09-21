@@ -4,6 +4,8 @@ block content
 	#layout.pure-g
 	.sidebar.pure-u-1.pure-u-md-1-4
 		header.header
+			if loggedIn
+				span#user Logged in as <b>#{user.username}</b>
 			h1.brand-title Dragonoids Robotics
 			h2.brand-tagline Blog of FTC Team 4286
 			nav.nav
