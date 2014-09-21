@@ -67,6 +67,20 @@ app.route("/blog").get(function(request, response) {
 	});
 });
 
+// Logins
+app.route("/login").get(function(request, response) {
+	response.render("login", function(err: Error, html: string): void {
+		if (err) {
+			console.error(err);
+			response.send(500, "A Jade error occurred!");
+			return;
+		}
+		response.send(html);
+	});
+}).post(function(request, response) {
+
+});
+
 // 404 page
 app.use(function(request, response, next): void {
 	response.send(404, "404 Not found!");

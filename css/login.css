@@ -1,0 +1,26 @@
+/* Override the main page's styles */
+#main {
+	position: static;
+	top: 0;
+	width: 100%;
+	min-height: 0;
+	z-index: auto;
+	background: white;
+}
+input {
+	margin-bottom: 0 !important;
+}
+
+section.pure-g {
+	margin-top: 65px;
+}
+h1 {
+	border-bottom: 1px solid #eee;
+	padding: 0.4em 0;
+	text-align: center;
+}
+
+button[type="submit"] {
+	margin: 10px auto !important;
+	display: block;
+}
