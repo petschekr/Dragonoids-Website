@@ -7,7 +7,10 @@ block content
 	section.pure-g
 		.pure-u-1-12.pure-u-md-1-3
 		.pure-u-5-6.pure-u-md-1-3
-			h1 Login
+			if loginFail
+				aside
+					p Your username or password is incorrect
+			h1 Team Login
 			form.pure-form(method="post")
 				fieldset.pure-group
 					input.pure-input-1-2(type="text", placeholder="Username", required=true, name="username")

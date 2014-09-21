@@ -24,3 +24,12 @@ button[type="submit"] {
 	margin: 10px auto !important;
 	display: block;
 }
+
+aside {
+	background: #FF4136;
+	padding: 0.1em 1em;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 1.125em;
+	text-align: center;
+}
