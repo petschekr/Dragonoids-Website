@@ -60,8 +60,10 @@ footer {
 .images > div {
     text-align: center;
 }
-.images > .pure-u-md-1-2 {
-    width: 49%;
+@media screen and (min-width: 48em) {
+    .images > .pure-u-md-1-2 {
+        width: 49%;
+    }
 }
 .images img {
     border-radius: 3px;
