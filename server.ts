@@ -8,6 +8,7 @@ var app = express();
 var serveStatic = require("serve-static");
 var responseTime = require("response-time");
 var compress = require("compression");
+var bodyParser = require("body-parser").urlencoded({extended: false});
 
 app.use(compress());
 app.use(responseTime());
@@ -77,8 +78,12 @@ app.route("/login").get(function(request, response) {
 		}
 		response.send(html);
 	});
-}).post(function(request, response) {
+}).post(bodyParser, function(request, response) {
+	console.log(request.body);
+	var username: string = request.body.username;
+	var password: string = request.body.password;
 
+	response.send(username + "|" + password);
 });
 
 // 404 page
