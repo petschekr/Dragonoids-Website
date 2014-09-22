@@ -4,7 +4,7 @@
 			"name": "Ryan Petschek",
 			"img": "http://placehold.it/75x75",
 			"positions": ["Captain", "Lead Programmer"],
-			"bio": "Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum. Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum."
+			"bio": "As a junior, Ryan is the lead programmer on the GFA Robotics team. This is his third year with the Dragonoids. He plays tennis and baseball and also fences and skis."
 		},
 		{
 			"name": "Anders Bottger",
@@ -21,8 +21,38 @@
 		{
 			"name": "Charley Beeman",
 			"img": "http://placehold.it/75x75",
-			"positions": ["Building", "Community Outreach", "Something Else"],
+			"positions": ["Building", "Community Outreach", "CAD Design and Modeling"],
 			"bio": "Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum. Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum."
+		},
+		{
+			"name": "Tyler Green",
+			"img": "http://placehold.it/75x75",
+			"positions": ["Driver", "Building"],
+			"bio": "A sophomore, Tyler has been with the GFA Robotics team for two years now. Outside of the robotics team, he is on the varsity sailing and cross country teams and plays in the GFA Band. In his free time, Tyler sleeps."
+		},
+		{
+			"name": "Pete Fisher",
+			"img": "http://placehold.it/75x75",
+			"positions": ["Community Outreach", "Building"],
+			"bio": "Pete is in his third year with the team and is currently a sophomore."
+		},
+		{
+			"name": "Scott Barnet",
+			"img": "http://placehold.it/75x75",
+			"positions": ["Community Outreach", "Building"],
+			"bio": "Brother of the club's founder, Van Barnet, Scott is in his third year with the team as a sophomore."
+		},
+		{
+			"name": "Kyle DiTieri",
+			"img": "http://placehold.it/75x75",
+			"positions": ["Coach", "Mentor"],
+			"bio": "Kyle DiTieri is the robotics team's primary coach. He also teaches physics and coaches fencing at Greens Farms Academy."
+		},
+		{
+			"name": "Jesse Robinson",
+			"img": "http://placehold.it/75x75",
+			"positions": ["Coach", "Mentor"],
+			"bio": "Jesse Robinson is the Director of IT at Greens Farms Academy."
 		}
 	]
 }
