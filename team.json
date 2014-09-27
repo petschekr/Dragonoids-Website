@@ -4,13 +4,13 @@
 			"name": "Ryan Petschek",
 			"img": "http://placehold.it/75x75",
 			"positions": ["Captain", "Lead Programmer"],
-			"bio": "As a junior, Ryan is the lead programmer on the GFA Robotics team. This is his third year with the Dragonoids. He plays tennis and baseball and also fences and skis."
+			"bio": "As a junior, Ryan is the lead programmer on the GFA robotics team. This is his third year with the Dragonoids. He plays tennis and baseball and also fences and skis."
 		},
 		{
 			"name": "Anders Bottger",
-			"img": "http://placehold.it/75x75",
-			"positions": ["Captain"],
-			"bio": ""
+			"img": "https://public-bn1306.files.1drv.com/y2pmiCT86kl65XFsGa8wJGx5mb6wC1LjdhLcwVohChxu5cpDqygif8KTcpz7y-VP5ksdeyEXIWM4Bf5j3W7MqJy2CjCUR66ADr9mY5ajCdKPAA/20140926_192835888_iOS.jpg",
+			"positions": ["Captain", "Building", "Design"],
+			"bio": "Anders is a junior and co-captain of the GFA robotics team. This is his second year on the team. In addition to robotics, Anders also enjoys playing squash and mountain biking."
 		},
 		{
 			"name": "Nina Rodgers",
@@ -20,9 +20,21 @@
 		},
 		{
 			"name": "Charley Beeman",
-			"img": "http://placehold.it/75x75",
+			"img": "https://public-bn1306.files.1drv.com/y2pj1eLFLxfV2iTzRCF1YmIciyuqHA3_CxFUUeHJvVTlx-7HulRV1TZNB9uBeO8edSQEogOP4kQFxJIiRRODdHFiqm_nRgH7Mayg69f-kItEu8/20140926_202745711_iOS.jpg",
 			"positions": ["Building", "Community Outreach", "CAD Design and Modeling"],
 			"bio": ""
+		},
+		{
+			"name": "Mathew Lichtenburg",
+			"img": "http://placehold.it/75x75",
+			"positions": ["Community outreach"],
+			"bio": ""
+		},
+		{
+			"name": "Justin Attai",
+			"img": "http://placehold.it/75x75",
+			"positions": ["Building", "Driver"],
+			"bio": "Justin is a sophomore and this is his second year on the robotics team. He helps come up with designs and favors building the robot over programming it. Outside of robotics, he plays soccer, and participates in the school plays."
 		},
 		{
 			"name": "Tyler Green",
@@ -41,6 +53,36 @@
 			"img": "http://placehold.it/75x75",
 			"positions": ["Community Outreach", "Building"],
 			"bio": "Brother of the club's founder, Van Barnet, Scott is in his third year with the team as a sophomore."
+		},
+		{
+			"name": "Teddy Gartland",
+			"img": "https://public-bn1306.files.1drv.com/y2pjWPT4q_HtmEWtR5Vee5fAk-YU8UAGKIR-Z00XE679oGhjwwttsz62JP1GGQwStOEPngMk-oBZAnmMjfvsTbAKZazSeZNdM5SbXMd0oaPhdA/20140926_192900508_iOS.jpg",
+			"positions": ["Website Design", "Robot Design"],
+			"bio": "This is Teddy's first year with the team as a freshman. In his free time, he enjoys learning HTML and fencing. Teddy's brother, Jack, was on the robotics team for two years before spending a semester abroad in China. He is now the assistant website designer."
+		},
+		{
+			"name": "Liam King",
+			"img": "https://public-bn1306.files.1drv.com/y2pfyguVwFL2tSCYwTLpe2y9pmTKvWCD31ku0C7Kct62y6s2BtJwOaOaDvDzsUwSui-xj3tq7MbnrBgwPhpFXSi5Ud8KcStV13be-oe-GtKY84/20140926_192946084_iOS.jpg",
+			"positions": ["Building", "Fundraising"],
+			"bio": "On the team, Liam helps with the building of the robot and fundraising for the team. In his free time, he enjoys playing Madden and FIFA, as well as playing basketball, football, and soccer with his little brother. He plays baseball and basketball for Greens Farms Academy. He's looking forward to a great first season with the Dragonoids."
+		},
+		{
+			"name": "Leah Attai",
+			"img": "https://public-bn1306.files.1drv.com/y2p_6Slcp_qeDDwi9v5Qong2U0I0CvoI61DBmpzwVCWZ2HYkm6XT67jcs5VGNqln2bmWJKbH5N3WphdscVhQiy1sVVQRgRD2yhqVz9rd7lfe8Y/20140926_192914478_iOS.jpg",
+			"positions": ["Logo Design", "Robot Design"],
+			"bio": "Leah is the only middle-schooler on the robotics team. She works on logo design as well as robot design. In her free time, she plays volleyball and also sews."
+		},
+		{
+			"name": "Alex Necakov",
+			"img": "https://public-bn1306.files.1drv.com/y2pJXHyOkR3GCVr3Y0DDIrxkgosDtz-_77djirLxXaJbemHkQmSQYWlZoQJ3zwBcf9XtQLDtARtoKO2_LvjU-faNJ4eeCDdeQiCzluhbbNeHsY/20140926_193031868_iOS.jpg",
+			"positions": ["Treasurer", "Community Outreach"],
+			"bio": "Alex is in charge of handling money and dealing with sponsors. In his free time, Alex enjoys watching e-sports on Twitch.tv. Alex's favorite team is TSM."
+		},
+		{
+			"name": "Charles Li",
+			"img": "https://public-bn1306.files.1drv.com/y2p2sG8B-BFgLUv1kEUTbNyCbp0juEETGJUMxFlrg9miOhdI1D2OHCCdFilsC9QZOlZKWSQQ9BPNv7FZ5thnZmzInlI34cSCU1FX4wGrmXUtlI/20140926_202710919_iOS.jpg",
+			"positions": ["Building"],
+			"bio": "Chuck is in 9th grade. He's new to the robotics team this year and he hopes to become better at about everything. He enjoys tennis, sleeping, and, of course, robotics."
 		},
 		{
 			"name": "Kyle DiTieri",
