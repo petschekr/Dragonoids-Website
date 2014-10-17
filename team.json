@@ -2,7 +2,7 @@
 	"members": [
 		{
 			"name": "Ryan Petschek",
-			"img": "http://placehold.it/75x75",
+			"img": "https://public-bn1306.files.1drv.com/y2ppU74eozH9rtc9N3F09KbFy62lj2h0m93utVqynTexjMzVKd_Ylz-CAeL6WWlMJDR8XdeTF967yd58k0QyLmhOkLX_ywsKSqdjGG0Er3VdI0/20141001_153621217_iOS.jpg",
 			"positions": ["Captain", "Lead Programmer"],
 			"bio": "As a junior, Ryan is the lead programmer on the GFA robotics team. This is his third year with the Dragonoids. He plays tennis and baseball and also fences and skis."
 		},
@@ -14,7 +14,7 @@
 		},
 		{
 			"name": "Nina Rodgers",
-			"img": "http://placehold.it/75x75",
+			"img": "https://public-bn1306.files.1drv.com/y2pX4zfuc_fk3XfgkD9513ODURPDl8wZPd0dJ7eRlZD-E1uZ9EgN4YNSVbbbcD93mM7AsnYN3Bt4iWsASR7T4Hz8ttuCRd0NqZ0OXiiVUl-_J4/20141001_153601050_iOS.jpg",
 			"positions": ["Captain"],
 			"bio": ""
 		},
@@ -26,31 +26,31 @@
 		},
 		{
 			"name": "Mathew Lichtenburg",
-			"img": "http://placehold.it/75x75",
-			"positions": ["Community outreach"],
-			"bio": ""
+			"img": "https://public-bn1306.files.1drv.com/y2pMd2c5uEh9b_OO9bf55Ecb771W-jGOfyGHwufjHhz-kfqnZMIHgcL6UcWMm-73U_xiumIHVjXwGb6BZNQfLXJjBqxswWLHVUtFns_X5OjkBk/IMG_20141010_145404.jpg",
+			"positions": ["Design", "Sponsorship"],
+			"bio": "This is Matthew Lichtenberg's third year on the robotics team. He works primarily on design and sponsorship and looks forward to a year full of gracious professionalism."
 		},
 		{
 			"name": "Justin Attai",
-			"img": "http://placehold.it/75x75",
-			"positions": ["Building", "Driver"],
+			"img": "https://public-bn1306.files.1drv.com/y2psP_GJrXr7VqOCgnaMTfFzuCAKdiwGT0pWiE7LmW1APsPEVWRN4aVdfiE9tbDf2zj2YQY0RanNeLgbzZQdHYb7fV8jvpEtGTBSV8TaoKdWjI/IMG_20141010_164517.jpg",
+			"positions": ["Programming", "Driver"],
 			"bio": "Justin is a sophomore and this is his second year on the robotics team. He helps come up with designs and favors building the robot over programming it. Outside of robotics, he plays soccer, and participates in the school plays."
 		},
 		{
 			"name": "Tyler Green",
-			"img": "http://placehold.it/75x75",
+			"img": "https://public-bn1306.files.1drv.com/y2pCmyjLulHn1xT9J4pg4VFkh-5gxRzatZuY4DfN7YI3zQdqwSD_pYPG2n20sK5uaU4NX51YD2qaJW89FIvWnO4U-IcEk0X0j0cnko9ae2zFSs/20141001_153657920_iOS.jpg",
 			"positions": ["Driver", "Building"],
 			"bio": "A sophomore, Tyler has been with the GFA Robotics team for two years now. Outside of the robotics team, he is on the varsity sailing and cross country teams and plays in the GFA Band. In his free time, Tyler sleeps."
 		},
 		{
 			"name": "Pete Fisher",
-			"img": "http://placehold.it/75x75",
-			"positions": ["Community Outreach", "Building"],
-			"bio": "Pete is in his third year with the team and is currently a sophomore."
+			"img": "https://public-bn1306.files.1drv.com/y2pA5bCDJmbcSUYjYXLuBvZ1IObcyzYPAVUcPAEfZKYmFsKgM_gAj5UT9G-QxLq8tUgKFuIiK3TTMRCPhXqHbn7E-dNbr66k1pGzmhVJkl025c/IMG_20141010_152003.jpg",
+			"positions": ["Engineering notebook", "Building", "Design"],
+			"bio": "A sophomore, Peter has been on the team for three years and has contributed to winning the \"Compass Award\" and \"Pit Design Award\". In the summer, he works at Longshore Sailing School, usually working on boat maintanance."
 		},
 		{
 			"name": "Scott Barnet",
-			"img": "http://placehold.it/75x75",
+			"img": "https://public-bn1306.files.1drv.com/y2pyaaTu62mE3_Zwq_VFu2qrcz9Z84UPIIvZ0lW3k3M_IdshlWjKDppXAmExa9DD1NDR3uAMHwyKIv1TYn4xD-FFJEaSU6orHmVJ8QiY9AgE2Y/20141001_153637718_iOS.jpg",
 			"positions": ["Community Outreach", "Building"],
 			"bio": "Brother of the club's founder, Van Barnet, Scott is in his third year with the team as a sophomore."
 		},
@@ -85,8 +85,20 @@
 			"bio": "Chuck is in 9th grade. He's new to the robotics team this year and he hopes to become better at about everything. He enjoys tennis, sleeping, and, of course, robotics."
 		},
 		{
-			"name": "Kyle DiTieri",
+			"name": "Abby Viton",
+			"img": "https://public-bn1306.files.1drv.com/y2pdvo3cgqmZ7HIb5NoojPelfmvAQi4F_jwSY1ur8xGCGdw6wnlcTpTR75pIcwJie6Oo14QnYNPNh3kYQdihOMk0bJUeHWAGPQp3XEoY9d2AmY/20141001_153611231_iOS.jpg",
+			"positions": ["Community Outreach"],
+			"bio": ""
+		},
+		{
+			"name": "Patrick Friend",
 			"img": "http://placehold.it/75x75",
+			"positions": ["Community Outreach"],
+			"bio": ""
+		},
+		{
+			"name": "Kyle DiTieri",
+			"img": "https://public-bn1306.files.1drv.com/y2pZy0vhFWcLEOZviJVejcDIAqMApjPjdP0oicj8mmEVJMKtXbd7TDuQj3BctkZ_lBYg2EvexmdfsIqG9-Ck4mf9pGo3nrPi-pwsuprGf6Dmcw/20141001_153718888_iOS.jpg",
 			"positions": ["Coach", "Mentor"],
 			"bio": "Kyle DiTieri is the robotics team's primary coach. He also teaches physics and coaches fencing at Greens Farms Academy."
 		},
