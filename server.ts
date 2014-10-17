@@ -240,6 +240,85 @@ app.route("/login").get(function(request, response) {
 		});
 	});
 });
+app.route("/password").get(function(request, response) {
+	response.redirect("/");
+}).post(bodyParser, function(request, response) {
+	if (!response.locals.loggedIn) {
+		response.redirect("/");
+	}
+
+	var oldpassword: string = request.body.oldpassword;
+	var password1: string = request.body.password1;
+	var password2: string = request.body.password2;
+
+	// Blank fields
+	if (!oldpassword || !password1 || !password2) {
+		response.locals.passwordFail = true;
+		response.locals.passwordMessage = "Passwords can't be blank";
+	}
+	// New passwords don't match
+	if (password1 !== password2) {
+		response.locals.passwordFail = true;
+		response.locals.passwordMessage = "New passwords don't match";
+	}
+	if (response.locals.passwordFail) {
+		// Render fail page
+		response.render("passwordchange", function(err: Error, html: string): void {
+			if (err) {
+				console.error(err);
+				response.send(500, "A Jade error occurred!");
+				return;
+			}
+			response.send(html);
+		});
+		return;
+	}
+	crypto.pbkdf2(oldpassword, response.locals.user.login.salt, response.locals.user.login.iterations, 32, function(err: Error, hashedPasswordBuffer: Buffer) {
+		var hashedPassword: string = hashedPasswordBuffer.toString("hex");
+		if (hashedPassword !== response.locals.user.login.hash) {
+			response.locals.passwordFail = true;
+			response.locals.passwordMessage = "Old password is not correct"
+		}
+		if (response.locals.passwordFail) {
+			// Render fail page
+			response.render("passwordchange", function(err: Error, html: string): void {
+				if (err) {
+					console.error(err);
+					response.send(500, "A Jade error occurred!");
+					return;
+				}
+				response.send(html);
+			});
+			return;
+		}
+		// Valid password change request
+		var newSalt: string = crypto.randomBytes(32).toString("hex");
+		crypto.pbkdf2(password1, newSalt, response.locals.user.login.iterations, 32, function(err: Error, hashedPasswordBuffer: Buffer) {
+			var hashedPassword: string = hashedPasswordBuffer.toString("hex");
+			// Update in DB
+			Collections.Users.update({"username": response.locals.user.username}, {$set: {"login.salt": newSalt, "login.hash": hashedPassword}}, {w:1}, function(err: Error) {
+				if (err) {
+					response.locals.passwordFail = true;
+					response.locals.passwordMessage = "A database error occurred";
+					console.error(err);
+				}
+				else {
+					response.locals.passwordSuccess = "success";
+					response.locals.passwordMessage = "Password changed successfully";
+				}
+				response.render("passwordchange", function(err: Error, html: string): void {
+					if (err) {
+						console.error(err);
+						response.send(500, "A Jade error occurred!");
+						return;
+					}
+					response.send(html);
+				});
+				return;
+			});
+		});
+	});
+});
 // Log out
 app.route("/logout").all(function(request, response) {
 	request.session["email"] = null;
@@ -252,7 +331,7 @@ app.use(function(request, response, next): void {
 	response.send(404, "404 Not found!");
 });
 
-var PORT: number = 8080;
+var PORT: number = 80;
 app.listen(PORT, "0.0.0.0", function(): void {
 	console.log("Server listening on port " + PORT);
 });
